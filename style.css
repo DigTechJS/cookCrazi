@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@1,700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Alegreya Sans', sans-serif;
+    margin:0;
+    background: #40E0D0;
+    background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
+
+}
+.mobileContainer{
+    margin-top:.2rem;
+    background-color: #fff;
+    width: 350px;
+    border-radius: 19px;
+    box-shadow: 0 0 10px 5px #3333331a;
+    overflow: hidden;
+
+}
+img{
+    max-width:100%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0.5rem .2rem;
+ 
+/* background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
+background: linear-gradient(to right, #3c1053, #ad5389); */
+background: #5D4157;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A8CABA, #5D4157);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A8CABA, #5D4157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+header input{
+    background-color: rgb(250, 244, 244);
+    border:none;
+    border-radius: 3px; 
+    padding:0.5rem 1rem;
+}
+
+header button{
+    background-color: transparent;
+    border: none;
+    color:#fff;
+    font-size:2rem;
+    margin-left: 10px;
+}
+.chaku{
+    margin-right:2rem;
+    font-size:2rem;
+    color:#fff;
+}
+
+.favContainer{
+    /* display:flex; */
+    padding-top:.2rem;
+    text-align: center;
+    /* background-color: rgb(241, 215, 215); */
+    background: #ddd6f3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #faaca8, #ddd6f3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #faaca8, #ddd6f3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /* flex-direction:column; */
+}
+
+.favMeals{
+    display:flex;
+    list-style-type: none;
+    padding:0;
+    overflow: auto;
+}
+
+.favMeals li{
+    position:relative;
+    width:8rem;;
+    margin:.5rem;
+    cursor:pointer;
+
+}
+.favMeals li .clear{
+    position:absolute;
+    background:transparent;
+    border:none;
+    top:0;
+    right:0rem;
+    opacity: 0;
+    
+}
+.favMeals li:hover .clear{
+    opacity: 1;
+}
+.favMeals li img{
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius:50%;
+    border:3px solid #ffffff;
+    object-fit: cover;
+    box-shadow: 0 0 10px 5px #3333331a;
+    
+}
+.favMeals li span{
+    font-size: 1rem;
+    display: inline-block;
+    width:5rem;
+}
+.random{
+    /* position: absolute; */
+    /* top:1rem; */
+    text-align: center;
+    align-items: center;
+    margin-top:1rem;
+    margin-bottom:.4rem;
+    background-color: #f3f3e7;
+    padding:.25rem .5rem;
+}
+.meal{
+    margin-top:.4rem;
+    cursor:pointer;
+    border-radius: 19px;
+    box-shadow: 0 0 10px 5px #3333331a;
+    /* background-color: #d2fcfe; */
+    background: #C9D6FF;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.mealHeader{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mealHeader img{
+    object-fit:cover;
+    height:200px;
+    /* width:100px; */
+}
+.mealBody{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:1rem;
+}
+.mealBody h4{
+    margin:0;
+
+}
+.mealBody .fav-btn{
+    cursor:pointer;
+    border:none;
+    background-color:transparent;
+    font-size: 1.2rem;
+    color:gray;
+
+}
+.mealBody .fav-btn.active{
+    color:rgb(211, 82, 57);
+}
+.textWidth{
+    width:20rem;
+}
+
+.popup-container{
+    background-color:rgba(0,0,0,0.5);
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.popup-container.hidden{
+    opacity: 0;
+    /* user-select:none; */
+    pointer-events: none;
+}
+
+.popup{
+    background-color:#fff;
+    padding:0 2rem;
+    border-radius:10px;
+
+    max-width: 450px;
+    max-height:100vh;
+    overflow:auto;
+    margin:2rem;
+    /* width:100%; */
+}
+
+.popup h1{
+    text-align: center;
+}
+.popup .close-popup{
+    position: relative;
+    background-color: transparent;
+    border:none;
+    cursor:pointer;
+    font-size: 1.5rem;
+    top:1rem;
+    left:20rem;
+}
+.popup .meal-info img{
+    width:300px;
+}
+
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%
+}
+.title{
+    height:3rem;
+    font-size:1.6rem;
+    margin-top:.6rem;
+    width:100%;
+    background: #FFEFBA;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #FFEFBA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin:0;
+    text-align: center;
+}
